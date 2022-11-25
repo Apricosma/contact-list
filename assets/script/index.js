@@ -78,13 +78,16 @@ class Contact {
         // delete element
         element.addEventListener('click', function () {
             if (element.matches('div')) {
+                // timeout fadeaway
                 let seconds = 0.5;
                 element.style.transition = 'opacity '+seconds+'s ease';
-
                 element.style.opacity = 0;
+
+                // remove after 500ms
                 setTimeout(function() {
                     element.remove();
                 }, 500);
+
                 count--;
                 head.innerHTML = `Contacts (${count})`
             }
@@ -107,6 +110,7 @@ const contactElement = select('.contact');
 const errors = select('.errors');
 const head = select('.head');
 
+// total contact counter
 let count = 0;
 
 onEvent('click', submit, function () {
@@ -129,9 +133,9 @@ onEvent('click', submit, function () {
             }       
 
             // gets all the values from array
-            let name = values[0];
-            let city = values[1];
-            let email = values[2];
+            let name = values[0].trim();
+            let city = values[1].trim();
+            let email = values[2].trim();
 
             if (!nameRegex.test(name)) {
                 errors.innerHTML = 'Please use first and last name';
@@ -148,8 +152,10 @@ onEvent('click', submit, function () {
                 throw new TypeError('Invalid email');
             }
 
+            // total contact counter
             count++;
             head.innerHTML = `Contacts (${count})` 
+
             let person = new Contact(name, city, email);
             errors.innerHTML = ''; // clears errors
             

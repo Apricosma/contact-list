@@ -38,7 +38,7 @@ body {
     border-bottom: solid;
     border-width: 1px;
     border-color: #6c6b7280;
-    /* background-color: var(--app-red); */
+    background-color: #2c1d1f;
     padding: 20px 0 20px;
     border-radius: 20px 20px 0 0;
     letter-spacing: 2px;
@@ -57,13 +57,14 @@ body {
     background-color: var(--app-field-bg);
     border-radius: 20px;
     min-height: 850px;
+    min-width: 1280px;
     margin-bottom: 100px;
     box-shadow: rgba(19, 20, 20, 0.349) 0px 8px 24px;
+    padding-bottom: 20px;
 }
 
 .contact-container {
     padding: 25px 50px;
-
 }
 
 input[type=text] {

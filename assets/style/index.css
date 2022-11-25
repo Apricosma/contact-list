@@ -1,14 +1,14 @@
 @import "./reset.css";
 
 :root {
-    --app-dark-bg: #1a1d28;
-    --app-field-bg: #3b3a44;
+    --app-dark-bg: #1d1e20;
+    --app-field-bg: #282b2e;
     --app-text: #f1f2f4;
     --app-green: #9f0;
     --app-pink: #f09;
     --app-purple: #90f;
     --app-orange: #f90;
-    --app-red: #c4243e;
+    --app-red: #a12222;
 }
     
 body {
@@ -18,7 +18,7 @@ body {
 .container {
     width: min(100% - 30px, 1280px);
     margin-inline: auto;
-
+    
 }
 
 /* - - - - - - - - - - - - - - - - - - */
@@ -31,9 +31,18 @@ body {
     justify-content: center;
 }
 
-h2 {
+.element-container .head {
     text-align: center;
     color: var(--app-text);
+    font-size: 40px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #6c6b7280;
+    /* background-color: var(--app-red); */
+    padding: 20px 0 20px;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 
 .element-container > * {
@@ -42,27 +51,35 @@ h2 {
 
 .element-container {
     margin-top: 50px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #6c6b722a;
+    background-color: var(--app-field-bg);
+    border-radius: 20px;
+    min-height: 850px;
+    margin-bottom: 100px;
+    box-shadow: rgba(19, 20, 20, 0.349) 0px 8px 24px;
 }
 
 .contact-container {
-    width: 1000px;
-    padding: 20px 0;
+    padding: 25px 50px;
+
 }
 
 input[type=text] {
     padding: 5px;
     margin: 15px 10px;
     color: var(--app-text);
-    background-color: var(--app-field-bg);
+    background-color: var(--app-dark-bg);
     width: 35%;
     height: 50px;
     font-size: 20px;
     margin-bottom: 20px;
-    margin-left: 280px;
+    margin-left: 27.5%;
 }
 
 .submit {
-    width: 92px;
+    width: 108px;
     height: 50px;
     background-color: var(--app-red);
     color: var(--app-text);
@@ -77,13 +94,12 @@ input[type=text] {
 .contact-grid {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding-left: 30px;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .contact {
-    background-color: #3d3f46;
+    background-color: #38383a;
     width: 375px;
     height: 150px;
     font-size: 20px;
@@ -91,13 +107,17 @@ input[type=text] {
     color: var(--app-text);
     line-height: 35px;
     box-shadow: 0.5px 0.5px 25px #1c1d1f;
+
+    border-radius: 5px;
     position: relative;
+
+
 }
 
 .contact:hover {
-    background-color: #44434d;
-    border-color: transparent;
-    box-shadow: 0 0 0 1px rgb(255, 255, 255);
+    border-style: dashed;
+    border-color: var(--app-red);
+    border-width: 1px;
 }
 
 .contact .close {
@@ -113,20 +133,6 @@ input[type=text] {
     color: red;
     font-size: 20px;
     letter-spacing: 1.5px;
-}
-
-@media only screen and (max-width: 1200px) {
-    .contact-grid {
-        grid-template-columns: auto auto;
-        grid-gap:10px 10px;
-    }
-}
-
-@media only screen and (max-width: 825px) {
-    .contact-grid {
-        grid-template-columns: auto;
-        grid-gap:10px 10px;
-    }
 }
 
 .close {
@@ -156,4 +162,23 @@ input[type=text] {
 
 .close:after {
     transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 1200px) {
+    .contact-grid {
+        grid-template-columns: auto auto;
+        grid-gap:10px 10px;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .contact-grid {
+        grid-template-columns: auto;
+        grid-gap:10px 10px;
+    }
+
+    input[type=text] {
+        width: 50%;
+        margin: 0 0 0 60px;
+    }
 }

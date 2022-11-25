@@ -8,7 +8,7 @@
     --app-pink: #f09;
     --app-purple: #90f;
     --app-orange: #f90;
-    --app-blue: rgb(196, 36, 62);
+    --app-red: #c4243e;
 }
     
 body {
@@ -18,8 +18,7 @@ body {
 .container {
     width: min(100% - 30px, 1280px);
     margin-inline: auto;
-    align-content: center;
-    justify-content: center;
+
 }
 
 /* - - - - - - - - - - - - - - - - - - */
@@ -28,6 +27,8 @@ body {
 
 .grid {
     display: grid;
+    align-content: center;
+    justify-content: center;
 }
 
 h2 {
@@ -49,25 +50,28 @@ h2 {
 }
 
 input[type=text] {
-    margin-left: 50px;
-}
-
-input[type=text] {
     padding: 5px;
     margin: 15px 10px;
     color: var(--app-text);
     background-color: var(--app-field-bg);
     width: 35%;
-    height: 35px;
+    height: 50px;
+    font-size: 20px;
     margin-bottom: 20px;
-    margin-left: 275px;
+    margin-left: 280px;
 }
 
 .submit {
     width: 92px;
-    height: 35px;
-    background-color: var(--app-blue);
+    height: 50px;
+    background-color: var(--app-red);
     color: var(--app-text);
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.submit:hover {
+    background-color: #d3324d;
 }
 
 .contact-grid {
@@ -75,15 +79,81 @@ input[type=text] {
     grid-template-columns: auto auto auto;
     padding-left: 30px;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .contact {
-    background-color: var(--app-field-bg);
+    background-color: #3d3f46;
     width: 375px;
     height: 150px;
     font-size: 20px;
     padding: 20px 30px 15px 20px;
     color: var(--app-text);
     line-height: 35px;
+    box-shadow: 0.5px 0.5px 25px #1c1d1f;
+    position: relative;
+}
+
+.contact:hover {
+    background-color: #44434d;
+    border-color: transparent;
+    box-shadow: 0 0 0 1px rgb(255, 255, 255);
+}
+
+.contact .close {
+    visibility: hidden;
+}
+
+.contact:hover .close {
+    visibility: visible;
+}
+
+.errors {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .contact-grid {
+        grid-template-columns: auto auto;
+        grid-gap:10px 10px;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .contact-grid {
+        grid-template-columns: auto;
+        grid-gap:10px 10px;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: var(--app-red);
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
 }

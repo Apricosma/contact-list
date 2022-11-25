@@ -23,11 +23,7 @@ class Contact {
     }
 
     set personName(name) {
-        if (1 === 1) {
-            this.#name = name;        
-        } else {
-            throw ''
-        }
+        this.#name = name;        
     }
 
     get personName() {

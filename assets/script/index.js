@@ -48,41 +48,73 @@ class Contact {
 
 
 
-    createContactCard() {
-        let element = {
-            tag : document.createElement('div'),
-            // name : this.#name,
-            // city : this.#city,
-            // email : this.#email,
-        }
+    // createContactCard() {
+    //     let element = {
+    //         tag : document.createElement('div'),
+    //         // name : this.#name,
+    //         // city : this.#city,
+    //         // email : this.#email,
+    //     }
 
-        contactContainer.appendChild(element.tag);
-        element.tag.classList.add('contact');
+    //     contactContainer.appendChild(element.tag);
+    //     element.tag.classList.add('contact');
+
+    //     // name
+    //     let namePara = document.createElement('p');
+    //     namePara.innerHTML = `Name: ${this.#name}`;
+    //     element.tag.appendChild(namePara);
+
+    //     // city
+    //     let cityPara = document.createElement('p');
+    //     cityPara.innerHTML = `City: ${this.#city}`;
+    //     element.tag.appendChild(cityPara);
+
+    //     // email
+    //     let emailPara = document.createElement('p');
+    //     emailPara.innerHTML = `Email: ${this.#email}`;
+    //     element.tag.appendChild(emailPara);
+        
+    //     element.tag.addEventListener('click', function () {
+    //         if (element.tag.matches('div')) {
+    //             element.tag.remove();
+    //         }
+    //     })
+    // }
+
+    render() {
+        let element = document.createElement('div');
+
+        contactContainer.appendChild(element);
+        element.classList.add('contact');
 
         // name
         let namePara = document.createElement('p');
         namePara.innerHTML = `Name: ${this.#name}`;
-        element.tag.appendChild(namePara);
+        element.appendChild(namePara);
 
         // city
         let cityPara = document.createElement('p');
         cityPara.innerHTML = `City: ${this.#city}`;
-        element.tag.appendChild(cityPara);
+        element.appendChild(cityPara);
 
         // email
         let emailPara = document.createElement('p');
         emailPara.innerHTML = `Email: ${this.#email}`;
-        element.tag.appendChild(emailPara);
-        
-        element.tag.addEventListener('click', function () {
-            if (element.tag.matches('div')) {
-                element.tag.remove();
+        element.appendChild(emailPara);
+
+        // delete element
+        element.addEventListener('click', function () {
+            if (element.matches('div')) {
+                element.remove();
             }
         })
     }
 
     listContacts() {
-        this.createContactCard();
+        array.forEach(value => {
+            value.render();
+            array = [];
+        })
 
     }
 }

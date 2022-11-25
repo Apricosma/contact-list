@@ -2,12 +2,13 @@
 
 :root {
     --app-dark-bg: #1a1d28;
-    --app-red: #ff3c57;
-    --app-green: #33ab4e;
-    --app-purple: #833cff;
-    --app-orange: #ff833c;
-    --app-blue: #3c57ff;
-    --app-blue-hover: #364ee6;
+    --app-field-bg: #3b3a44;
+    --app-text: #f1f2f4;
+    --app-green: #9f0;
+    --app-pink: #f09;
+    --app-purple: #90f;
+    --app-orange: #f90;
+    --app-blue: rgb(196, 36, 62);
 }
     
 body {
@@ -17,4 +18,72 @@ body {
 .container {
     width: min(100% - 30px, 1280px);
     margin-inline: auto;
+    align-content: center;
+    justify-content: center;
+}
+
+/* - - - - - - - - - - - - - - - - - - */
+/* Style                               */
+/* - - - - - - - - - - - - - - - - - - */
+
+.grid {
+    display: grid;
+}
+
+h2 {
+    text-align: center;
+    color: var(--app-text);
+}
+
+.element-container > * {
+    border-radius: 5px;
+}
+
+.element-container {
+    margin-top: 50px;
+}
+
+.contact-container {
+    width: 1000px;
+    height: 400px;
+    padding: 20px 0;
+}
+
+input[type=text] {
+    margin-left: 50px;
+}
+
+input[type=text] {
+    padding: 5px;
+    margin: 15px 10px;
+    color: var(--app-text);
+    width: 35%;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-left: 275px;
+}
+
+.submit {
+    width: 92px;
+    height: 35px;
+    background-color: var(--app-blue);
+    color: var(--app-text);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 30px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact {
+    background-color: var(--app-field-bg);
+    width: 375px;
+    height: 150px;
+    font-size: 20px;
+    padding: 20px 30px 15px 20px;
+    color: var(--app-text);
+    line-height: 35px;
 }
